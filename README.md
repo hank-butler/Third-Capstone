@@ -12,4 +12,4 @@ All the code for the API data pull and additionally data wrangling can be seen h
 
 [insert link for it]
 
-## 
+## Exploratory Data Analysis

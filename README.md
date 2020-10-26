@@ -48,16 +48,7 @@ After running the ADFuller Tests, the expectations were generally accurate. The 
 
 The ADFuller Tests results were done to establish whether or not the series needed to be differenced to make it stationary and model. The Auto_Arima package was used to model each price and return series and provide an expectation for the Vector AutoRegression of Returns. Each model had a Moving Average (MA) component that ranged from 1 to 4. Only the price models were integrated (meaning they were ARIMA models). The most interesting observation was that ETH and BTC did not have an Autoregressive component which suggests that yesterday’s price does not have an influence on today’s price. However, LTC had an AR component of 4, which indicates the lagged prices from one to four days ago affect today’s price.
 
-After the ADFuller Tests, a Vector AutoRegression was done to forecast returns. Below is the correlation matrix of residuals from the VAR.
-
-Correlation matrix of residuals
-                    BTC_daily_return  ETH_daily_return  LTC_daily_return
-
-BTC_daily_return            1.000000          0.822321          0.773713
-
-ETH_daily_return            0.822321          1.000000          0.832074
-
-LTC_daily_return            0.773713          0.832074          1.000000
+After the ADFuller Tests, a Vector AutoRegression was done to forecast returns.
 
 After the forecast of returns, the next step is building a regression model to see the effects of Bitcoin and Litecoin prices on the price of Ethereum and the effects of Bitcoin and Ethereum prices on the price of Litecoin. The second iteration of models will see the effects of Bitcoin price, Litecoin price, and volume of all assets on Ethereum price and the effects of Bitcoin price, Ethereum price, and volume on Litecoin price. 
 

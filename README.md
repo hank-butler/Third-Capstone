@@ -18,7 +18,7 @@ All the code for the API data pull and additional data wrangling can be seen her
 
 The initial plot of the Bitcoin, Ethereum, and Litecoin Volume Weight Average Price (VWAP) isn’t very insightful due to the massive difference in scale between Bitcoin’s price and the other assets.
 
-[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_EDA.ipynb]
+(Link to EDA File)[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_EDA.ipynb]
 
 To overcome the scaling issue, a log transformation of each price was conducted and plotted. After the log transformation, there appears to be a relationship between the assets at first glance. 
 
@@ -32,7 +32,7 @@ Daily volume had one of the more interesting graphs. Ethereum volume is the one 
 
 Lastly, a correlation matrix for daily return was created. 
 
-## Data Preprocessing
+## Data Pre-processing
 
 Pulling in the data with the Pandas .read_csv() method has the index in reverse order. The index was reversed with the .reindex() method. Next, a check for any NA values was run and yielded 0 NA’s.
 
@@ -40,7 +40,7 @@ The next step of pre-processing was creating the daily and log daily return colu
 
 ## Modeling
 
-[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_Modeling.ipynb]
+(Link to Pre-Processing and Modeling)[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_Modeling.ipynb]
 
 Before doing any time-series analysis, the Augmented Dickey Fuller Test (ADFuller Test) was conducted on the VWAP, Log VWAP, Daily VWAP Returns, and Log Daily VWAP Returns. The purpose of the ADFuller Test is to see if the time-series is stationary, the properties do not depend on the time at which the series is observed. The expectation is that the price series will be non-stationary, due to trends in the price, and that the returns series will be stationary. The expectation for the returns being stationary is from their plots and histograms not showing an identifiable trend.
 
@@ -52,8 +52,11 @@ After the ADFuller Tests, a Vector AutoRegression was done to forecast returns. 
 
 Correlation matrix of residuals
                     BTC_daily_return  ETH_daily_return  LTC_daily_return
+
 BTC_daily_return            1.000000          0.822321          0.773713
+
 ETH_daily_return            0.822321          1.000000          0.832074
+
 LTC_daily_return            0.773713          0.832074          1.000000
 
 After the forecast of returns, the next step is building a regression model to see the effects of Bitcoin and Litecoin prices on the price of Ethereum and the effects of Bitcoin and Ethereum prices on the price of Litecoin. The second iteration of models will see the effects of Bitcoin price, Litecoin price, and volume of all assets on Ethereum price and the effects of Bitcoin price, Ethereum price, and volume on Litecoin price. 

@@ -12,13 +12,13 @@ Initial data pulls showed an error where a certain date would have 0 values for 
 
 All the code for the API data pull and additional data wrangling can be seen here:
 
-[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_Data_Wrangling.ipynb]
+[API Data Pull](https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_Data_Wrangling.ipynb)
 
 ## Exploratory Data Analysis
 
 The initial plot of the Bitcoin, Ethereum, and Litecoin Volume Weight Average Price (VWAP) isn’t very insightful due to the massive difference in scale between Bitcoin’s price and the other assets.
 
-(Link to EDA File)[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_EDA.ipynb]
+[Link to EDA File](https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_EDA.ipynb)
 
 To overcome the scaling issue, a log transformation of each price was conducted and plotted. After the log transformation, there appears to be a relationship between the assets at first glance. 
 
@@ -40,7 +40,7 @@ The next step of pre-processing was creating the daily and log daily return colu
 
 ## Modeling
 
-(Link to Pre-Processing and Modeling)[https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_Modeling.ipynb]
+[Link to Pre-Processing and Modeling](https://github.com/hank-butler/Third-Capstone/blob/master/Third_Capstone_Modeling.ipynb)
 
 Before doing any time-series analysis, the Augmented Dickey Fuller Test (ADFuller Test) was conducted on the VWAP, Log VWAP, Daily VWAP Returns, and Log Daily VWAP Returns. The purpose of the ADFuller Test is to see if the time-series is stationary, the properties do not depend on the time at which the series is observed. The expectation is that the price series will be non-stationary, due to trends in the price, and that the returns series will be stationary. The expectation for the returns being stationary is from their plots and histograms not showing an identifiable trend.
 
